@@ -1,0 +1,154 @@
+.price {
+    height: 100%;
+    background-color: #F0F0E6;
+    border-radius: 150px 150px 0px 0px;
+    line-height: 2rem;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+.price-content {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    gap: 70px;
+    margin: auto;
+    flex-direction: column;
+    padding: 120px 30px 100px;
+}
+
+.section__title {
+    color: #272724;
+    font-family: 'Oswald';
+    text-align: center;
+    font-size: 160px;
+    font-weight: 300;
+    line-height: 210px;
+    letter-spacing: 1rem;
+}
+
+.price_title {
+    margin-bottom: 130px;
+}
+
+.master-title {
+    text-align: left;
+    display: block;
+    font-size: 3rem;
+    font-family: 'Oswald';
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+.price-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.price-content li {
+    font-size: 20px;
+    list-style-type: none;
+    font-weight: 300px;
+    font-family: 'Oswald';
+    display: flex;
+    gap: 20px;
+    height: 34px;
+    justify-content: space-around;
+    white-space: nowrap;
+    padding: 0 50px;
+}
+
+.price-note {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #2727244D;
+    text-transform: uppercase;
+    margin: 0 10%;
+}
+
+.price-content li p {
+    width: 100%;
+    border-bottom: 1px solid black;
+    height: 5px;
+    padding-top: 20px;
+    height: 25px;
+}
+
+
+@media (max-width: 1024px) {
+    .price {
+        border-radius: 100px 100px 0px 0px;
+        margin-bottom: -1px;
+    }
+
+    .price-content {
+        padding: 80px 30px;
+    }
+
+    .price_title {
+        margin-bottom: 40px;
+    }
+
+    .section__title {
+        font-size: 100px;
+        line-height: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section__title {
+        font-size: 70px;
+    }
+
+    .price-note {
+        font-size: 10px;
+        line-height: 1rem;
+        margin: auto;
+    }
+
+    .master-title {
+        font-size: 20px;
+        margin: 0;
+
+    }
+
+    .price-content {
+        gap: 20px;
+
+    }
+
+    .price-content ul {
+        gap: 5px;
+    }
+
+    .price-content li {
+        font-size: 0.6rem;
+        gap: 8px;
+    }
+
+    .price-content li p {
+        height: 20px;
+    }
+}
+
+
+@media (max-width: 568px) {
+    .section__title {
+        font-size: 3rem;
+    }
+
+    .price-content {
+        padding: 50px 30px 50px;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .section__title {
+        font-size: 1.8rem;
+    }
+}

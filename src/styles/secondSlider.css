@@ -1,0 +1,72 @@
+.slider-barber-name {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 49px;
+}
+
+.slider-barber-location,
+.slider-barber-name {
+    position: absolute;
+    z-index: 3;
+    color: #F0F0E6;
+    text-transform: uppercase;
+    left: 20px;
+}
+
+.second-slider-container {
+    max-width: 780px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-barber-location {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 18px;
+    top: 480px;
+}
+
+.slider-wrapper>li {
+    position: relative;
+}
+
+.section-second-slider-name {
+    font-family: 'Oswald';
+    font-size: 50px;
+    font-weight: 500;
+    color: #F0F0E6;
+    margin-top: 100px;
+}
+
+@media (max-width: 500px) {
+    .slider-barber-location {
+        top: 450px;
+        font-size: 20px;
+    }
+
+    .slider-barber-name {
+        top: 390px;
+        font-size: 32px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .second-slider-container {
+        max-width: 390px;
+        overflow: hidden;
+        margin: 100px 0 168px 0;
+    }
+
+    .slider-barber-location {
+        top: 360px;
+        font-size: 20px;
+    }
+
+    .slider-barber-name {
+        top: 310px;
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,141 @@
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.header_open {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+
+.header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 280px;
+    padding-bottom: 260px;
+    background-image: url("../images/bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 2;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 480px;
+    left: 23%;
+    align-items: center;
+    position: relative;
+}
+
+header {
+    color: #F0F0E6;
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    line-height: 1.5rem;
+    align-items: center;
+    height: 100px;
+}
+
+h1 {
+    font-family: 'Lily Script One', sans-serif;
+    text-transform: uppercase;
+    color: #FFF;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.nav-button {
+    color: #F0F0E6;
+    border: none;
+    font-family: 'Oswald';
+    background-color: transparent;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.burger__button {
+    position: fixed;
+    z-index: 5;
+    left: 15px;
+    width: 35px;
+    line-height: 10px;
+    font-size: 3rem;
+    color: #F0F0E6;
+    border: none;
+    background-color: transparent;
+}
+
+.open {
+    padding: 0;
+    top: 50px;
+    background-color: transparent;
+}
+
+.close {
+    top: 35px;
+    width: 45px;
+    height: 40px;
+    padding-bottom: 7px;
+    background-color: #272724;
+}
+
+.header_close {
+    position: fixed;
+    z-index: 4;
+    top: 0px;
+    gap: 20px;
+    height: 100vh;
+    width: 190px;
+    background-color: #272724;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 50px 15px;
+    animation: slideInFromLeft 0.5s ease-in-out;
+}
+
+.nav_close {
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+    margin: 0;
+    gap: 24px;
+    bottom: 43%;
+}
+
+@media (max-width: 1440px) {
+    header {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 568px) {
+    .header-logo {
+
+        padding-top: 180px;
+        padding-bottom: 100px;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 760px) {
+    nav {
+        left: 0;
+    }
+}

@@ -1,0 +1,116 @@
+.contacts {
+    height: 100%;
+    padding: 120px 30px 0;
+    background-color: #F0F0E6;
+    line-height: 2rem;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+.contacts-content-address__span,
+.contacts_item5 a {
+    font-family: "Oswald";
+}
+
+.contacts_item5 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contacts_content {
+    display: flex;
+    max-width: 1200px;
+    gap: 50px;
+    justify-content: center;
+    margin: auto;
+    padding: 120px 0;
+}
+
+.contacts_content p {
+    margin: 0;
+}
+
+.contacts-content-address__span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.contacts-content-address {
+    max-width: 287px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contacts_item5 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.contacts-content-map {
+    height: 500px;
+    width: 500px;
+}
+
+.contacts-content-address {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .contacts {
+        padding: 50px 10px 0;
+    }
+
+    .contacts-content-map {
+        margin: 0 auto;
+        height: 200px;
+        width: 300px;
+    }
+
+    .contacts_content {
+        flex-direction: column;
+        padding: 40px 0 0;
+        gap: 5px;
+    }
+
+    .contacts-content-address {
+        display: grid;
+        font-size: 0.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 100%;
+        max-width: 100%;
+        gap: 5px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+    }
+
+    .contacts-content-address__span,
+    .contacts_item3 {
+        display: none;
+    }
+
+    .contacts_item1 {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .contacts_item2 {
+        grid-area: 1 / 3 / 2 / 4;
+        margin-left: auto;
+    }
+
+    .contacts_item4 {
+        grid-area: 2 / 1 / 3 / 4;
+    }
+
+    .contacts_item5 {
+        grid-area: 3 / 1 / 8 / 4;
+        margin: auto;
+    }
+}
