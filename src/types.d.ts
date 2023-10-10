@@ -12,16 +12,16 @@ declare module 'react-google-maps/api';
     name: string;
     location: string;
     imageSrc: string;
-    item: CardData | null;
+    item: CardData;
     key: number;
     props: never;
   }  
 
   interface CardData {
-    id?: number;
-    name?: string;
-    location?: string;
-    imageSrc?: string;
+    id: number;
+    name: string;
+    location: string;
+    imageSrc: string;
   }
 
   interface ListProps {
@@ -30,7 +30,10 @@ declare module 'react-google-maps/api';
 }
 
 type SlideTransitionParams = {
-  item: CardData | null;
-  key: number;
-  props: SliderImage;
+  from: SliderImage;
+  enter: SliderImage;
+  leave: SliderImage;
+  config: {
+    duration: number;
+  },
 };

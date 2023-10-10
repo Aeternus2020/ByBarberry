@@ -4,12 +4,12 @@ import '../../styles/header.css';
 import '@fontsource/lily-script-one';
 import logo from "../../images/logo.svg"
 
-const Header = ({ isBurgerButtonVisible }) => {
-    const [buttonBurgerOpen, setButtonBurgerOpen] = useState(false);
-    const [buttonBurgerClose, setButtonBurgerClose] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [navMenu, setNavMenu] = useState(true);
-    const navRef = useRef(null);
+const Header = () => {
+    const [buttonBurgerOpen, setButtonBurgerOpen] = useState<boolean>(false);
+    const [buttonBurgerClose, setButtonBurgerClose] = useState<boolean>(false);
+    const [menuOpen, setMenuOpen] = useState<boolean>(false);
+    const [navMenu, setNavMenu] = useState<boolean>(true);
+    const navRef = useRef<HTMLDivElement | null>(null);
 
     const buttons = {
         barberrs: 'барбери',
@@ -28,13 +28,13 @@ const Header = ({ isBurgerButtonVisible }) => {
         }
     };
 
-    const toggleMenuOpen = (firstState, secondState) => {
+    const toggleMenuOpen = (firstState: boolean | ((prevState: boolean) => boolean), secondState: boolean | ((prevState: boolean) => boolean)) => {
         setButtonBurgerOpen(firstState);
         setButtonBurgerClose(secondState);
         setMenuOpen(!secondState);
     };
 
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: { target: any; }) => {
         if (navRef.current && !navRef.current.contains(event.target)) {
             toggleMenuOpen(false, true);
         }
@@ -63,10 +63,7 @@ const Header = ({ isBurgerButtonVisible }) => {
         }
     }, [menuOpen]);
 
-
-    const buttonKeys = Object.keys(buttons);
-
-
+    const buttonKeys: Array<keyof typeof buttons> = Object.keys(buttons) as Array<keyof typeof buttons>;
 
     return (<>
         {buttonBurgerOpen && (

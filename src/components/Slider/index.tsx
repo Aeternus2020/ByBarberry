@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import '../../styles/slider.css';
 import { useTransition, useSpring, animated } from '@react-spring/web';
@@ -38,8 +38,7 @@ function App() {
   const nextCard = cardData[nextCardIndex];
   const [isAnimating, setIsAnimating] = useState(false);
 
-
-  const slideTransitions = useTransition<CardData | null, SlideTransitionParams>(currentCard, {
+  const slideTransitions = useTransition<CardData, SlideTransitionParams>(currentCard, {
     from: {
       opacity: 1,
       transform: `translate3d(${direction === 1 ? '70%' : '-170%'}, -50%, 0) rotateY(${direction === 1 ? '-25deg' : '25deg'}) scale(0.9)`,
@@ -57,7 +56,7 @@ function App() {
     },
   });
   
-  const slideTransitionsPrev = useTransition<CardData | null, SlideTransitionParams>(currentCard, {
+  const slideTransitionsPrev = useTransition<CardData, SlideTransitionParams>(prevCard, {
     from: {
       opacity: 0,
       transform: `translate3d(${direction === 1 ? '-50%' : '70%'}, -50%, 0) rotateY(0deg) scale(${direction === 1 ? '1.2' : '0.6'})`,
@@ -75,7 +74,7 @@ function App() {
     },
   });
 
-  const slideTransitionsNext = useTransition<CardData | null, SlideTransitionParams>(currentCard, {
+  const slideTransitionsNext = useTransition<CardData, SlideTransitionParams>(nextCard, {
     from: {
       opacity: 0,
       transform: `translate3d(${direction === 1 ? '-170%' : '-50%'}, -50%, 0) rotateY(0deg) scale(${direction === 1 ? '0.6' : '1.2'})`,
@@ -141,10 +140,9 @@ function App() {
   
     setTimeout(() => {
       setIsAnimating(false);
-    console.log("hhhhddd")
     }, 1000);
   };  
-  
+
   return (
       <animated.div style={{ opacity, transform }} className="app-slider barberrs" key='name_wrapper'>
         <p className='section-slider-name'>
@@ -157,29 +155,29 @@ function App() {
             </div>
           </button>}
           <div className="cards__wrapper" ref={cardsWrapperRef}>
-            {slideTransitions(({ item, props })  => (
+            {slideTransitions(( props, item )  => (
               item && (
                 <animated.div style={props} className='card current--card' key={item.id}>
                   <div className="card__image">
-                  <img src={item.get()?.imageSrc} alt={item.get()?.name} />
+                  <img src={item.imageSrc} alt={item.name} />
                   </div>
                 </animated.div>
               )
             ))}
-            {slideTransitionsPrev(({ item, props })  => (
+            {slideTransitionsPrev(( props, item )  => (
               item && (
                 <animated.div style={props} className='card previous--card' key={item.id}>
                   <div className="card__image">
-                  <img src={item.get()?.imageSrc} alt={item.get()?.name} />
+                  <img src={item.imageSrc} alt={item.name} />
                   </div>
                 </animated.div>
               )
             ))}
-            {slideTransitionsNext(({ item, props })  => (
+            {slideTransitionsNext(( props, item )  => (
               item && (
                 <animated.div style={props} className='card next--card' key={item.id}>
                   <div className="card__image">
-                  <img src={item.get()?.imageSrc} alt={item.get()?.name} />
+                  <img src={item.imageSrc} alt={item.name} />
                   </div>
                 </animated.div>
               )

@@ -6,12 +6,11 @@ import { defaultTheme } from './theme.js';
 
 
 const Contacts = () => {
-    const API_KEY = process.env.REACT_APP_API_KEY
+    const API_KEY = process.env.REACT_APP_API_KEY || "DEFAULT_API_KEY";
 
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: API_KEY,
     })
-
 
     const containerStyle = {
         width: "100%",
@@ -22,8 +21,6 @@ const Contacts = () => {
         lat: 50.497137,
         lng: 30.768307,
     };
-
-
 
     const defaultOptions = {
         panControl: true,
@@ -40,11 +37,8 @@ const Contacts = () => {
         styles: defaultTheme
     }
 
-    const onLoad = marker => {
-        console.log("marker: ", marker);
-        console.dir("marker: ", marker);
-
-    };
+    const onLoad = (map: google.maps.Map | undefined) => {
+    };    
 
     if (!isLoaded) {
         return <div>Error loading Google Maps</div>;
@@ -56,12 +50,12 @@ const Contacts = () => {
             <span className='section__title'>контакти</span>
             <div className="contacts_content">
                 <div className="contacts-content-map">
-                    <GoogleMap zoom={15.6} center={center} mapContainerStyle={containerStyle}
-                        onLoad={onLoad}
-                        options={defaultOptions}
-                    >
-                        <MarkerF onLoad={onLoad} position={center} />
-                    </GoogleMap>
+                <GoogleMap zoom={15.6} center={center} mapContainerStyle={containerStyle}
+                    onLoad={onLoad}
+                    options={defaultOptions}
+                >
+                    <MarkerF position={center} />
+                </GoogleMap>
                 </div>
                 <div className="contacts-content-address">
                     <div className='contacts_item1'><span className="contacts-content-address__span">М.Бровари</span><p>в.ВОЛОДИМИРА МОНОМАХА 5а</p></div>
@@ -92,7 +86,6 @@ const Contacts = () => {
             </div>
         </section >
     )
-
 }
 
 export default Contacts;
