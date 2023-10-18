@@ -101,7 +101,7 @@ h1 {
     z-index: 4;
     top: 0px;
     gap: 20px;
-    height: 100vh;
+    height: 105vh;
     width: 190px;
     background-color: #272724;
     flex-direction: column-reverse;
@@ -116,7 +116,7 @@ h1 {
     z-index: 2;
     margin: 0;
     gap: 24px;
-    bottom: 50%;
+    bottom: 60%;
 }
 
 @media (max-width: 1440px) {
