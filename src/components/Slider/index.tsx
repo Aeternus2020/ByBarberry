@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import '../../styles/slider.css';
 import { useTransition, useSpring, animated } from '@react-spring/web';

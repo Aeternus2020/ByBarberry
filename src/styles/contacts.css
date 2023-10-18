@@ -68,14 +68,14 @@
 
     .contacts-content-map {
         margin: 0 auto;
-        height: 200px;
-        width: 300px;
     }
 
     .contacts_content {
         flex-direction: column;
         padding: 40px 0 0;
         gap: 5px;
+        align-items: center;
+        max-width: 500px;
     }
 
     .contacts-content-address {
@@ -112,5 +112,16 @@
     .contacts_item5 {
         grid-area: 3 / 1 / 8 / 4;
         margin: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .contacts-content-map {
+        height: 300px;
+        width: 300px;
+    }
+
+    .contacts_content {
+        max-width: 300px;
     }
 }

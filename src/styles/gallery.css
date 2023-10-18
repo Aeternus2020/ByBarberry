@@ -68,7 +68,6 @@
 
 @media (max-width: 768px) {
     .gallery {
-        /* max-height: 1200px; */
         grid-template-columns: repeat(9, 1fr);
         grid-template-rows: repeat(5, 1fr);
         gap: 10px;

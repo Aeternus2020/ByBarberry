@@ -35,7 +35,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px 0px 1050px 0px;
+    margin: 50px 0px 1000px 0px;
 }
 
 .cardList {
@@ -351,5 +351,52 @@
 
     .section-slider-name {
         top: calc(var(--card-width) - var(--card-width) * 1);
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    :root {
+        --card-width: 200px;
+        --card-height: 310px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    :root {
+        --card-width: 160px;
+        --card-height: 240px;
+    }
+    .infoList .info__wrapper {
+        top: 320px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    :root {
+        --card-width: 130px;
+        --card-height: 200px;
+    }
+    .infoList .info__wrapper {
+        top: 270px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    :root {
+        --card-width: 100px;
+        --card-height: 150px;
+    }
+    
+    .infoList .info__wrapper {
+        top: 200px;
+    }
+
+    .info .location {
+    font-size: 14px;
+    }
+
+    .app-slider {
+        margin: 50px 0px 600px 0px;
     }
 }
