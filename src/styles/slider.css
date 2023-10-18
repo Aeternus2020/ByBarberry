@@ -359,6 +359,9 @@
         --card-width: 200px;
         --card-height: 310px;
     }
+    .app-slider {
+        margin: 50px 0px 800px 0px;
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -380,6 +383,9 @@
         top: 270px;
         font-size: 15px;
     }
+    .app-slider {
+        margin: 50px 0px 600px 0px;
+    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -394,9 +400,5 @@
 
     .info .location {
     font-size: 14px;
-    }
-
-    .app-slider {
-        margin: 50px 0px 600px 0px;
     }
 }

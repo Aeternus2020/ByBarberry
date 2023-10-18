@@ -116,7 +116,7 @@ h1 {
     z-index: 2;
     margin: 0;
     gap: 24px;
-    bottom: 70%;
+    bottom: 50%;
 }
 
 @media (max-width: 1440px) {
